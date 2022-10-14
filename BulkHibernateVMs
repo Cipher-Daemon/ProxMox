@@ -1,0 +1,8 @@
+#!/bin/bash
+read -e -p "VM ID Start:" STARTID
+read -e -p "VM ID End:" ENDID
+for (( i = $STARTID; i <= $ENDID; i++ ))
+do
+        qm suspend $i --todisk
+        echo "VM $i has been hibernated!"
+done
